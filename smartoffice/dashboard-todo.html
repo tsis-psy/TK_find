@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>통합그룹웨어 결재 대시보드</title>
+	</head>
+	<body>
+		<div class="wrap-content">
+			<h2>결재 대시보드</h2>
+			<div class="wrap-border">
+				<div class="wrap-box box-1">
+					<h3>간편 현황</h3>
+					<ul>
+						<li>
+							<div>
+								<p>예고함</p>
+								<span class="yellow">10</span>
+							</div>
+						</li>
+						<li>
+							<div>
+								<p>미결함</p>
+								<span class="orange">10</span>
+							</div>
+						</li>
+						<li>
+							<div>
+								<p>진행함</p>
+								<span class="blue">10</span>
+							</div>
+						</li>
+						<li>
+							<div>
+								<p>참조/회람함</p>
+								<span class="gray">10</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="wrap-box box-2">
+					<h3>미결 현황</h3>
+					<!-- 차트없음 -->
+					<div class="no-chart" style="display: none;">
+						<p>미결 문서가 없습니다.</p>
+					</div>
+					<!-- //end차트없음 -->
+					<!-- 차트표시될때 -->
+					<div class="wrap-chart" >
+						<div class="chart"><canvas id="chartjs-0" class="chartjs" style="display: block; height: 180px; width: 180px; background-color: #fff" width="180" height="180"></canvas></div>
+						<div class="info-chart">
+							<dl>
+								<div class="reddot">
+									<dt>3건</dt>
+									<dd>30일 이상 지연</dd>
+								</div>
+								<div class="orangedot">
+									<dt>7건</dt>
+									<dd>15일 이상 지연</dd>
+								</div>
+								<div class="yellowdot">
+									<dt>11건</dt>
+									<dd>15일 이상 지연</dd>
+								</div>
+							</dl>
+						</div>
+					</div>
+					<!-- //end차트표시될때 -->
+				</div>
+				<div class="wrap-box box-3">
+					<h3>미결함 리스트</h3>
+					<span class="num-pending red">10건 - 30일 이상 지연</span>
+					<a href="#" class="btn-more">More</a>
+					<!-- 목록없음 -->
+					<div class="no-list" style="display: none;">
+						<p>조회할 목록이 없습니다.</p>
+					</div>
+					<!-- //end목록없음 -->
+					<!-- 미결문서표시 -->
+					<ul class="list" >
+						<li>
+							<div class="list-approval">
+								<span class="wrap-tit">
+									
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+									[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+                                    <span class="status">결재</span>
+								<span class="division">모바일서비스</span>
+								<span class="name">김박길동</span>
+								<span class="date">03-30</span>
+								</span>
+							</div>
+						</li>
+						<li>
+							<div class="list-approval">
+								<span class="wrap-tit">
+									<span class="ico-emergency">
+										<img src="img/ico_emergency.gif" />
+									</span>
+									<span class="ico-data">
+										<img src="img/data_any.gif" />
+									</span>
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+									[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+								</span>
+								<span class="status">결재안함</span>
+								<span class="division">공통서비스팀파트</span>
+								<span class="name">김박길동</span>
+								<span class="date">03-30</span>
+							</div>
+						</li>
+						<li>
+							<div class="list-approval">
+								<span class="wrap-tit">
+									[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+								</span>
+								<span class="status">결재</span>
+								<span class="division">모바일서비스</span>
+								<span class="name">기안자</span>
+								<span class="date">03-30</span>
+							</div>
+						</li>
+						<li>
+							<div class="list-approval">
+								<span class="wrap-tit">
+									<span class="ico-data">
+										<img src="img/data_any.gif" />
+									</span>
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+									[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+								</span>
+								<span class="status">담당</span>
+								<span class="division">모바일서비스</span>
+								<span class="name">김박길동</span>
+								<span class="date">03-30</span>
+							</div>
+						</li>
+						<li>
+							<div class="list-approval">
+								<span class="wrap-tit">
+									<span class="ico-emergency">
+										<img src="img/ico_emergency.gif" />
+									</span>
+									<span class="ico-data">
+										<img src="img/data_any.gif" />
+									</span>
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+									[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+								</span>
+								<span class="status">결재안함</span>
+								<span class="division">통합서비스</span>
+								<span class="name">기안자</span>
+								<span class="date">03-30</span>
+							</div>
+						</li>
+					</ul>
+					<!-- //end미결문서표시 -->
+				</div>
+			</div>
+			<div class="wrap-mid">
+				<h3>결재진행함</h3>
+				<span class="btn-info"><img src="img/btn-info.png"></span>
+				<a href="#" class="btn-more">More</a>
+				<!-- 목록없음 -->
+				<div class="no-list-mid"  style="display: none;">
+					<p>조회할 목록이 없습니다.</p>
+				</div>
+				<!-- //end목록없음 -->
+				<!-- 목록있음 -->
+				<ul >
+					<li>
+						<div class="box-ing ">
+							<div class="tit-ing">
+								<span>
+									<span class="ico-emergency">
+										<img src="img/ico_emergency.gif" />
+									</span>
+									<span class="ico-data">
+										<img src="img/data_any.gif" />
+									</span>
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+								[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+							</div>
+							<div class="route-ing">
+								<div class="person">
+									<img src="img/photo.jpeg" />
+                                    <div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+								<div class="img-status move"></div>
+								<div class="person">
+									<img src="img/photo.jpeg" />
+									<div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+							</div>
+							<div class="step-ing">
+								<img src="img/ico_approval.gif" />
+								<span class="wrap-progress">
+									<span class="bar-progress"></span>
+								</span>
+								<span>2/4</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="box-ing ">
+							<div class="tit-ing">
+								
+									<span class="ico-emergency">
+										<img src="img/ico_emergency.gif" />
+									</span>
+									<span class="ico-data">
+										<img src="img/data_any.gif" />
+									</span>
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+								[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건
+							</div>
+							<div class="route-ing">
+								<div class="person">
+									<img src="img/photo.jpeg" />
+                                    <div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+								<div class="img-status move"></div>
+								<div class="person">
+									<img src="img/photo.jpeg" />
+									<div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+							</div>
+							<div class="step-ing">
+								<img src="img/ico_approval.gif" />
+								<span class="wrap-progress">
+									<span class="bar-progress"></span>
+								</span>
+								<span>2/4</span>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="box-ing ">
+							<div class="tit-ing">
+								<span>
+									<span class="ico-emergency">
+										<img src="img/ico_emergency.gif" />
+									</span>
+									<span class="ico-data">
+										<img src="img/data_any.gif" />
+									</span>
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+								[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+							</div>
+							<div class="route-ing">
+								<div class="person">
+									<img src="img/photo.jpeg" />
+                                    <div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+								<div class="img-status move"></div>
+								<div class="person">
+									<img src="img/photo.jpeg" />
+									<div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+							</div>
+							<div class="step-ing">
+								<img src="img/ico_approval.gif" />
+								<span class="wrap-progress">
+									<span class="bar-progress"></span>
+								</span>
+								<span>2/4</span>
+							</div>
+						</div>
+					</li>
+                    <li>
+						<div class="box-ing ">
+							<div class="tit-ing">
+								<span>
+									<span class="ico-emergency">
+										<img src="img/ico_emergency.gif" />
+									</span>
+									<span class="ico-data">
+										<img src="img/data_any.gif" />
+									</span>
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+								[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+							</div>
+							<div class="route-ing">
+								<div class="person">
+									<img src="img/photo.jpeg" />
+                                    <div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+								<div class="img-status move"></div>
+								<div class="person">
+									<img src="img/photo.jpeg" />
+									<div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+							</div>
+							<div class="step-ing">
+								<img src="img/ico_approval.gif" />
+								<span class="wrap-progress">
+									<span class="bar-progress"></span>
+								</span>
+								<span>2/4</span>
+							</div>
+						</div>
+					</li>
+                    <li>
+						<div class="box-ing">
+							<div class="tit-ing">
+								<span>
+									<span class="ico-emergency">
+										<img src="img/ico_emergency.gif" />
+									</span>
+									<span class="ico-data">
+										<img src="img/data_any.gif" />
+									</span>
+									<span class="ico-comment">
+										<img src="img/ico_comment.gif" />
+									</span>
+								[IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+							</div>
+							<div class="route-ing">
+								<div class="person">
+									<img src="img/photo.jpeg" />
+                                    <div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+								<div class="img-status ing"></div>
+								<div class="person">
+									<img src="img/photo.jpeg" />
+									<div class="person-info">
+                                        <span class="person-name">기안자</span>
+                                        <span class="person-division">슈퍼어드민</span>
+                                        <span>03-30 18:43</span>
+                                    </div>
+								</div>
+							</div>
+							<div class="step-ing">
+								<img src="img/ico_approval.gif" />
+								<span class="wrap-progress">
+									<span class="bar-progress"></span>
+								</span>
+								<span>2/4</span>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<!-- //end목록있음 -->
+			</div>
+			<div class="view-all">더보기</div>
+			<div class="close-all" style="display: none;">닫기</div>
+			<div class="wrap-border-2">
+				<div class="wrap-box box-4">
+                    <div class="wrap-tab">
+                        <input type="radio" id="tab-1" name="tab_menu" class="tab-1-radio" checked />
+                        <input type="radio" id="tab-2" name="tab_menu" class="tab-2-radio" />
+                                <!-- tabmenu -->
+                                <div class="tabs">
+                                    <label class="tab-recent" for="tab-1">최근 사용 양식</label>
+                                    <label class="tab-like" for="tab-2">즐겨찾기</label>
+                                </div>
+                        <div class="panels">      
+                            <div class="panel-1">
+								<!-- 목록없음 -->
+								<div class="no-list"  style="display: none;">
+									<p>조회할 목록이 없습니다.</p>
+								</div>
+								<!-- //end목록없음 -->
+								<!-- 목록있음 -->
+                                <ul>
+                                    <li>요금조정 처리 요청서요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                </ul>
+								<!-- //end목록있음 -->
+                            </div>
+                            <div class="panel-2">
+								<!-- 목록없음 -->
+								<div class="no-list" >
+									<p>조회할 목록이 없습니다.</p>
+								</div>
+								<!-- //end목록없음 -->
+								<!-- 목록있음 -->
+                                <ul style="display: none;">
+                                    <li>요금조정 처리 요청서요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                    <li>요금조정 처리 요청서</li>
+                                </ul>
+								<!-- //end목록있음 -->
+                            </div>
+                        </div>  
+                    </div>
+				</div>
+			<!-- 담당업무함case -->
+                <div class="wrap-box-todo">
+                    <div class="wrap-box box-5-todo">
+                        <h3>담당업무함</h3>
+                        <a href="#" class="btn-more">More</a>
+						<!-- 목록없음 -->
+						<div class="no-list" style="display: none;">
+							<p>조회할 목록이 없습니다.</p>
+						</div>
+						<!-- //end목록없음 -->
+						<!-- 목록있음 -->
+                        <div class="list-todo" >
+                            <ul>
+                                <li>
+                                    <div>
+                                        <span class="docu-name">통합그룹웨어 전산처리의뢰서전산처리의뢰서</span>
+                                        <span class="docu-num">125</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="docu-name">통합그룹웨어 의뢰서</span>
+                                        <span class="docu-num">25</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="docu-name">전산처리의뢰서</span>
+                                        <span class="docu-num">25</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <span class="docu-name">통합그룹웨어 전산처리의뢰서</span>
+                                        <span class="docu-num">25</span>
+                                    </div>
+                                </li>
+								<li>
+                                    <div>
+                                        <span class="docu-name">통합그룹웨어 전산처리의뢰서</span>
+                                        <span class="docu-num">2</span>
+                                    </div>
+                                </li>
+								<li>
+                                    <div>
+                                        <span class="docu-name">통합그룹웨어 전산처리의뢰서</span>
+                                        <span class="docu-num">2</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+						<!-- //목록있음 -->
+                    </div>
+                    <div class="wrap-box box-6-todo">
+                        <h3>부서수신함</h3>
+                        <a href="#" class="btn-more">More</a>
+                        <ul class="list">
+                            <li>
+                                <div class="list-approval">
+                                    <span class="wrap-tit">
+                                        
+                                        <span class="ico-comment">
+                                            <img src="img/ico_comment.gif" />
+                                        </span>
+                                        [IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+                                      
+                                    <span class="division">모바일서비스</span>
+                                    <span class="name">김박길동</span>
+                                    <span class="date">03-30</span>
+                                    </span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-approval">
+                                    <span class="wrap-tit">
+                                        <span class="ico-emergency">
+                                            <img src="img/ico_emergency.gif" />
+                                        </span>
+                                        <span class="ico-data">
+                                            <img src="img/data_any.gif" />
+                                        </span>
+                                        <span class="ico-comment">
+                                            <img src="img/ico_comment.gif" />
+                                        </span>
+                                        [IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+                                    </span>
+                                   
+                                    <span class="division">공통서비스팀파트</span>
+                                    <span class="name">김박길동</span>
+                                    <span class="date">03-30</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-approval">
+                                    <span class="wrap-tit">
+                                        [IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+                                    </span>
+                                    
+                                    <span class="division">모바일서비스</span>
+                                    <span class="name">기안자</span>
+                                    <span class="date">03-30</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-approval">
+                                    <span class="wrap-tit">
+                                        <span class="ico-data">
+                                            <img src="img/data_any.gif" />
+                                        </span>
+                                        <span class="ico-comment">
+                                            <img src="img/ico_comment.gif" />
+                                        </span>
+                                        [IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+                                    </span>
+                                    
+                                    <span class="division">모바일서비스</span>
+                                    <span class="name">김박길동</span>
+                                    <span class="date">03-30</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-approval">
+                                    <span class="wrap-tit">
+                                        <span class="ico-emergency">
+                                            <img src="img/ico_emergency.gif" />
+                                        </span>
+                                        <span class="ico-data">
+                                            <img src="img/data_any.gif" />
+                                        </span>
+                                        <span class="ico-comment">
+                                            <img src="img/ico_comment.gif" />
+                                        </span>
+                                        [IT사업본부] AIA t-Push 알림 발송 서비스 2021년 3월 이용대금 청구의 건</span>
+                                    </span>
+                                    
+                                    <span class="division">통합서비스</span>
+                                    <span class="name">기안자</span>
+                                    <span class="date">03-30</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            	</div>
+			<!-- end담당업무함case -->
+			
+			</div>
+		</div>
+
+		<script src="add/ChartJSControls.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			window.chartColors = {
+				red: 'rgb(255, 99, 132)',
+				orange: 'rgb(255, 159, 64)',
+				yellow: 'rgb(255, 205, 86)',
+				green: 'rgb(75, 192, 192)',
+				blue: 'rgb(54, 162, 235)',
+				Indigo: 'rgb(0, 141, 185)',
+				purple: 'rgb(153, 102, 255)',
+				grey: 'rgb(201, 203, 207)',
+				black: 'rgb(0, 0, 0)',
+			};
+
+			new Chart(document.getElementById('chartjs-0'), {
+				type: 'polarArea',
+				data: {
+					labels: ['5일 이상', '15일 이상', '30일 이상'],
+					datasets: [
+						{
+							label: 'My First Dataset',
+							data: [11, 7, 3],
+							backgroundColor: [window.chartColors.yellow, window.chartColors.orange, window.chartColors.red],
+						},
+					],
+				},
+				options: {
+					onClick: graphClickEvent,
+					legend: {
+						display: false,
+					},
+				},
+			});
+
+			function graphClickEvent(event, array) {
+				if (array[0]) {
+					alert(array[0]._model.label);
+				}
+			}
+
+			function Favorite() {
+				if (document.getElementById('li1').className == 'rtab_r2_off') {
+					document.getElementById('li1').className = 'rtab_r2_on';
+					document.getElementById('li2').className = 'rtab_r2_off';
+				} else {
+					document.getElementById('li1').className = 'rtab_r2_off';
+					document.getElementById('li2').className = 'rtab_r2_on';
+				}
+			}
+		</script>
+	</body>
+</html>
